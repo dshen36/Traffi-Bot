@@ -108,14 +108,17 @@ body {
   padding: 0 !important;
   height: 600px;
 }
-
+#panel-info {
+  padding-top: 15px;
+}
 
 /*
  * Table adjustments
  */
-.table td {
+td, th {
   text-align: center;
 }
-.table th {
-  text-align: center;
+
+.vertical-header {
+  font-weight: bold;
 }
