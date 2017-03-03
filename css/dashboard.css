@@ -86,27 +86,36 @@ body {
 
 
 /*
- * Placeholder dashboard ideas
+ * Panel design
  */
 
-.placeholders {
-  margin-bottom: 30px;
+.panel-row {
+  margin-bottom: 15px;
   text-align: center;
 }
-.placeholders h4 {
+.panel-row h4 {
   margin-bottom: 0;
 }
-.placeholder {
-
+.panel-content {
   margin-bottom: 20px;
 }
-.placeholder img {
+.panel-content img {
   display: inline-block;
   border-radius: 50%;
 }
 
 .panel-aesthetics {
-  margin: 15px;
   padding: 0 !important;
   height: 600px;
+}
+
+
+/*
+ * Table adjustments
+ */
+.table td {
+  text-align: center;
+}
+.table th {
+  text-align: center;
 }

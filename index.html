@@ -71,65 +71,69 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-8 panel panel-default panel-aesthetics" >
-              <div class="panel-heading">
-                <h3>Georgia Tech</h3>
-              </div>
-              <div class="panel-body" id="map">
-                
-              </div>
-            </div>
-            <div class="col-xs-3 col-xs-offset-1 placeholder panel panel-default panel-aesthetics">
-              <div class="panel-heading">
-                <h3>Robot #2</h3>
-              </div>
-              <div class="panel-body">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>Robot 1</h4>
-                <span class="text-muted">Something else</span>
+          <div class="row panel-row">
+            <div class="col-xs-8">
+              <div class="panel panel-default panel-aesthetics">
+                <div class="panel-heading">
+                  <h3>Georgia Tech</h3>
+                </div>
+                <div class="panel-body" id="map"></div>
               </div>
             </div>
-           
+            <div class="col-xs-4 ">
+              <div class="panel-content panel panel-default panel-aesthetics">
+                <div class="panel-heading">
+                  <h3>Robot #2</h3>
+                </div>
+                <div class="panel-body">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
+                  <h4>Robot 1</h4>
+                  <span class="text-muted">Something else</span>
+                </div>
+                </div>
+            </div>
           </div>
-
-          <h2 class="sub-header">General Statistics</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Weather</th>
-                  <th>Number Deployed</th>
-                  <th>Selected Algorithm</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>65</td>
-                  <td>4</td>
-                  <td>Pedestrian-Priority</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="row panel-row">
+            <div class="col-xs-12">
+              <h2 class="sub-header">General Statistics</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Weather</th>
+                      <th>Number Deployed</th>
+                      <th>Selected Algorithm</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>65</td>
+                      <td>4</td>
+                      <td>Pedestrian-Priority</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+          <div class="row panel-row">
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
               <h4>Robot 1</h4>
               <span class="text-muted">Something else</span>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
               <h4>Label</h4>
               <span class="text-muted">Something else</span>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
               <h4>Label</h4>
               <span class="text-muted">Something else</span>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
               <h4>Label</h4>
               <span class="text-muted">Something else</span>
             </div>
@@ -146,7 +150,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/map.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- Just to make our panel-content images work. Don't actually copy the next line! -->
     <script src="js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
