@@ -97,9 +97,16 @@ body {
   margin-bottom: 0;
 }
 .placeholder {
+
   margin-bottom: 20px;
 }
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+.panel-aesthetics {
+  margin: 15px;
+  padding: 0 !important;
+  height: 600px;
 }

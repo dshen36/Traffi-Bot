@@ -1,0 +1,5 @@
+#map {
+/* panel-heading is 77px. overall height is 500px. the map is being offset at the start of the panel-body, so need to negate that offset by (500-77)/500 %*/
+    height: 86.6%; 
+    width: 100%;
+}
