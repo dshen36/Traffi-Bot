@@ -25,6 +25,7 @@ function initMap() {
 function drawMarkers(google_map, location) {
   var marker = new google.maps.Marker({
     position: location,
-    map: google_map
+    map: google_map,
+    title: 'Test_Robot'
   });
 }

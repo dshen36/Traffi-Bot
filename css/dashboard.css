@@ -126,11 +126,11 @@ td, th {
 /*
  * Robot-card adjustments
  */
-.col-xs-4 > .panel {
+.col-sm-3 > .panel {
   position: relative;
 }
 
-.col-xs-4 .panel-footer {
+.col-sm-3 .panel-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
