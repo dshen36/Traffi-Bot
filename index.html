@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Add a New Robot</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -122,47 +122,54 @@
           </div>
           <div class="row panel-row">
             <div class="col-xs-12">
-              <h2 class="sub-header">General Statistics</h2>
-              <div class="table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Weather</th>
-                      <th>Number Deployed</th>
-                      <th>Selected Algorithm</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>65</td>
-                      <td>4</td>
-                      <td>Pedestrian-Priority</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>General Statistics</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Weather</th>
+                          <th>Number Deployed</th>
+                          <th>Selected Algorithm</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>65</td>
+                          <td>4</td>
+                          <td>Pedestrian-Priority</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <h3 class="sub-header"> Status at a Glance </h3>
           <div class="row panel-row">
             <div class="col-xs-6 col-sm-3 panel-content">
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
               <h4>Robot 1</h4>
-              <span class="text-muted">Something else</span>
+              <span class="text-muted">Healthy</span>
             </div>
             <div class="col-xs-6 col-sm-3 panel-content">
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <h4>Robot 2</h4>
+              <span class="text-muted">Unhealthy</span>
             </div>
             <div class="col-xs-6 col-sm-3 panel-content">
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <h4>Robot 3</h4>
+              <span class="text-muted">Healthy</span>
             </div>
             <div class="col-xs-6 col-sm-3 panel-content">
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <h4>Robot 4</h4>
+              <span class="text-muted">Healthy</span>
             </div>
             <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
             <script src="js/firebase_database.js"></script>
