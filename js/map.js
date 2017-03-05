@@ -1,8 +1,11 @@
-
+//Key Coordinates
 var CAMPUS = {lat: 33.7756, lng: -84.3963};
 
-var FERST_AND_SIXTH = {lat: 33.777289,lng: -84.402403};
-var CRC_CROSSWALK = {lat: 33.775430,lng: -84.402557};
+// var FERST_AND_SIXTH = {lat: 33.777289,lng: -84.402403};
+// var CRC_CROSSWALK = {lat: 33.775430,lng: -84.402557};
+
+var markers = {FERST_AND_SIXTH:{lat: 33.777289,lng: -84.402403},
+               CRC_CROSSWALK:{lat: 33.775430,lng: -84.402557}};
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -18,14 +21,24 @@ function initMap() {
     overviewMapControl: true,
     rotateControl: true
   });
-  drawMarkers(map,CRC_CROSSWALK);
-  drawMarkers(map,FERST_AND_SIXTH);
+  for (var marker in markers) { //cant do a for-each in chrome
+    drawMarkers(map,marker);
+  }
 }
 
 function drawMarkers(google_map, location) {
   var marker = new google.maps.Marker({
-    position: location,
+    animation: google.maps.Animation.DROP,
+    position: markers[location],
     map: google_map,
-    title: 'Test_Robot'
+    title: location
+  });
+  google.maps.event.addListener(marker, 'click', function(){
+   getDataFromDB(location);
   });
 }
+
+// google.maps.event.addDomListener(window, 'load', initMap);
+// google.maps.event.addListener(marker, 'click', function(){
+//   console.log(marker.location);
+// });

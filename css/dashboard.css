@@ -106,7 +106,7 @@ body {
 
 .panel-aesthetics {
   padding: 0 !important;
-  height: 600px;
+  height: 550px;
 }
 #panel-info {
   padding-top: 15px;
@@ -126,11 +126,11 @@ td, th {
 /*
  * Robot-card adjustments
  */
-.col-sm-3 > .panel {
+.col-sm-4 > .panel {
   position: relative;
 }
 
-.col-sm-3 .panel-footer {
+.col-sm-4 .panel-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
