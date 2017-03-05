@@ -1,9 +1,7 @@
 //Key Coordinates
 var CAMPUS = {lat: 33.7756, lng: -84.3963};
 
-// var FERST_AND_SIXTH = {lat: 33.777289,lng: -84.402403};
-// var CRC_CROSSWALK = {lat: 33.775430,lng: -84.402557};
-
+// Dictionary of markers. eventually use info from DB.
 var markers = {FERST_AND_SIXTH:{lat: 33.777289,lng: -84.402403},
                CRC_CROSSWALK:{lat: 33.775430,lng: -84.402557}};
 
@@ -37,8 +35,3 @@ function drawMarkers(google_map, location) {
    getDataFromDB(location);
   });
 }
-
-// google.maps.event.addDomListener(window, 'load', initMap);
-// google.maps.event.addListener(marker, 'click', function(){
-//   console.log(marker.location);
-// });

@@ -15,6 +15,7 @@ var dbRefObject = database.ref().child('robots');
 
 // IDs of text to change
 var location_card = document.getElementById('location');
+var health_status_card = document.getElementById('health-status');
 var battery_level_card = document.getElementById('battery-level');  //normally would just poll robot for battery level
 var traffic_pattern_card = document.getElementById('traffic-pattern');
 
@@ -35,7 +36,8 @@ function getDataFromDB(location) {
 	var robotRefObject = dbRefObject.child(location);
 	robotRefObject.on('value', function(snapshot) {
 		location_card.innerText = snapshot.val().location;
-		battery_level_card.innerText = snapshot.val().battery_level;
+		battery_level_card.innerText = snapshot.val().battery_level + "%";
+		health_status_card.innerText = calculateHealthStatus(snapshot.val().battery_level);
 	});
 }
 
@@ -47,3 +49,4 @@ function writeRobotData(name, location, latitude, longitude) {
 		battery_level: Math.floor(Math.random()*100 +1)
 	});
 }
+
