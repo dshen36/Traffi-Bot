@@ -13,40 +13,51 @@ var database = firebase.database();
 // Reference to specifically the robots
 var dbRefObject = database.ref().child('robots');
 
+// Initiates General Statistics
+dbRefObject.on('value', function(snapshot) {
+    document.getElementById('count').innerText = Object.keys(snapshot.val()).length;
+})
+
+// Live count of active robots.
+function getAllLocations(map) {
+    dbRefObject.on('value', function(snapshot) {
+        var robots = snapshot.val();
+        Object.keys(robots).forEach(function(location) {
+            var coordinates = {};
+            coordinates.lat = robots[location]['latitude'];
+            coordinates.lng = robots[location]['longitude'];
+            drawMarkers(map,location,coordinates);
+        })
+    })
+}
+
 // IDs of text to change
 var location_card = document.getElementById('location');
 var health_status_card = document.getElementById('health-status');
 var battery_level_card = document.getElementById('battery-level');  //normally would just poll robot for battery level
 var traffic_pattern_card = document.getElementById('traffic-pattern');
 
-
-// var dbRefObject = database.ref().child('CRC_CROSSWALK');
-//remember: firebase inserts nodes into the database in a tree-like structure via key:value pairs, not like SQL DB
-//ref function gets you to the root of the database
-	//child, appends a child node to the previously captured node (in this case, root), and appends a new node to it
-	//creates a child key (key:value node) of the inputed parameter. in this case location card.
-
 //synchronizing object changes in real time. via on method
 // dbRefObject.on('value', snap => console.log(snap.val()));
 //on points at the location of the inputted parameter
 //pulls down information on every change referring to the inputted parameter
-	//snap parameter = data snapshot. an entire tuple of values so only need .val()
+    //snap parameter = data snapshot. an entire tuple of values so only need .val()
 
 function getDataFromDB(location) {
-	var robotRefObject = dbRefObject.child(location);
-	robotRefObject.on('value', function(snapshot) {
-		location_card.innerText = snapshot.val().location;
-		battery_level_card.innerText = snapshot.val().battery_level + "%";
-		health_status_card.innerText = calculateHealthStatus(snapshot.val().battery_level);
-	});
+    var robotRefObject = dbRefObject.child(location);
+    robotRefObject.on('value', function(snapshot) {
+        location_card.innerText = snapshot.val().location;
+        battery_level_card.innerText = snapshot.val().battery_level + "%";
+        health_status_card.innerText = calculateHealthStatus(snapshot.val().battery_level);
+    });
 }
 
 function writeRobotData(name, location, latitude, longitude) {
-	database.ref('robots/' + name).set({
-		location: location,
-		latitude: latitude,
-		longitude: longitude,
-		battery_level: Math.floor(Math.random()*100 +1)
-	});
+    database.ref('robots/' + name).set({
+        location: location,
+        latitude: latitude,
+        longitude: longitude,
+        battery_level: Math.floor(Math.random()*100 +1)
+    });
 }
 
