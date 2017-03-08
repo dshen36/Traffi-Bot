@@ -18,7 +18,7 @@ dbRefObject.on('value', function(snapshot) {
     document.getElementById('count').innerText = Object.keys(snapshot.val()).length;
 })
 
-// Live count of active robots.
+// Retrieving all robots
 function getAllLocations(map) {
     dbRefObject.on('value', function(snapshot) {
         var robots = snapshot.val();
@@ -26,7 +26,8 @@ function getAllLocations(map) {
             var coordinates = {};
             coordinates.lat = robots[location]['latitude'];
             coordinates.lng = robots[location]['longitude'];
-            drawMarkers(map,location,coordinates);
+            var battery_percentage = robots[location]['battery_level'];
+            drawMarkers(map,location,coordinates,battery_percentage);
         })
     })
 }
