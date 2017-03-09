@@ -1,5 +1,6 @@
 //Key Coordinates
-var CAMPUS = {lat: 33.7756, lng: -84.3963};
+// var CAMPUS = {lat: 33.7756, lng: -84.3963};
+var CAMPUS = {lat: 33.774976 , lng: -84.396387};
 
 function initMap() {
   var gMap = new google.maps.Map(document.getElementById('map'), {
@@ -15,6 +16,10 @@ function initMap() {
     overviewMapControl: true,
     rotateControl: true
   });
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(gMap);
+
   getAllLocations(gMap);
 }
 
