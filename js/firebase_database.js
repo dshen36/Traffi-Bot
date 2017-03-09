@@ -19,7 +19,7 @@ dbRefObject.on('value', function(snapshot) {
 })
 
 // Retrieving all robots
-function getAllLocations(map) {
+function getAllMarkers(map) {
     dbRefObject.on('value', function(snapshot) {
         var robots = snapshot.val();
         Object.keys(robots).forEach(function(location) {
