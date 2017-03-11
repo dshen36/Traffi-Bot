@@ -82,7 +82,7 @@
             <div class="col-sm-4">
               <div class="panel-content panel panel-default panel-aesthetics">
                 <div class="panel-heading">
-                  <h3>Robot</h3>
+                  <h3 id="location">Robot Location</h3>
                 </div>
                 <div class="panel-body">
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
@@ -91,16 +91,20 @@
                     <table class="table table-hover">
                       <tbody>
                         <tr>
-                          <td class="vertical-header">Location</td>
-                          <td id="location"></td>
-                        </tr>
-                        <tr>
                           <td class="vertical-header">Status</td>
-                          <td id="health-status"></td>
+                          <td id="health-status">-</td>
                         </tr>
                         <tr>
                           <td class="vertical-header">Battery Level</td>
-                          <td id="battery-level"></td>
+                          <td id="battery-level">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Vehicular Traffic</td>
+                          <td id="vehicular-traffic">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Pedestrian Traffic</td>
+                          <td id="pedestrian-traffic">-</td>
                         </tr>
                         <tr>
                           <td class="vertical-header">Traffic Pattern</td>

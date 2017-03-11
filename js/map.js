@@ -82,3 +82,59 @@ function RecenterButton(button_div, map) {
     gMap.panTo(CAMPUS);
   })
 }
+
+function estimateTraffic(pointA, pointB) {
+  var service = new google.maps.DistanceMatrixService();
+
+  service.getDistanceMatrix({
+    origins: [pointA,pointB], //,pointB
+    destinations: [pointA,pointB], //,pointA
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.IMPERIAL,
+    avoidHighways: false,
+    avoidTolls: false,
+    drivingOptions: {
+      departureTime: new Date(Date.now()),
+      trafficModel: 'bestguess'
+    }
+  }, callback);
+}
+
+function callback(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) {
+    vehicular_traffic_card.innerText = "Error!";
+  } else {
+    var origin = response.originAddresses[0];
+    var destination = response.destinationAddresses[0];
+    if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+      vehicular_traffic_card.innerText = "No routes found!";
+    } else {
+      console.log(response);
+      var rows = response.rows;
+
+      var max_duration_diff = Number.MIN_SAFE_INTEGER;
+      var max_duration = 0;
+      var max_duration_in_traffic = 0;
+
+      for (var row in rows) {
+        for (var element in response.rows[row].elements) {
+          var duration = response.rows[row].elements[element].duration;
+          var duration_in_traffic = response.rows[row].elements[element].duration_in_traffic;
+          if (row != element && (duration_in_traffic.value - duration.value) > max_duration_diff) {
+             max_duration_diff = duration_in_traffic.value - duration.value;
+             max_duration = duration;
+             max_duration_in_traffic = duration_in_traffic;
+          }
+        }
+      }
+      vehicular_traffic_card.innerText =  max_duration_in_traffic.text + " (Expected " + max_duration.text + ")";
+    }
+  }
+}
+
+function packCoordinates(latitude,longitude) {
+  var coordinates = {};
+  coordinates.lat = latitude;
+  coordinates.lng = longitude;
+  return coordinates;
+}
