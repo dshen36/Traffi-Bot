@@ -151,3 +151,17 @@ label {
   width: 100%;
   text-align: center;
 }
+
+/*
+ * Editable Text Div
+ */
+.editable-div {
+  text-align: center;
+  width: 100%;
+}
+
+.clickedit {
+  margin: 10px;
+  font-size: 16px;
+  height: 36px;
+}

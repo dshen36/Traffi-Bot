@@ -15,3 +15,30 @@ function calculatePinColor(batteryLevel) {
 		return "CB4335";
 	}
 }
+
+var defaultText = 'Edit Robot Name';
+
+function doneInput(i) {
+    var input = $(i.target),
+        label = input && input.prev();
+
+    label.text(input.val() === '' ? defaultText : input.val());
+
+    input.hide();
+    label.show();
+}
+
+$('.clickedit').hide()
+	.focusout(doneInput)
+	.keyup(function (i) {
+	    if ((i.which && i.which == 13) || (i.keyCode && i.keyCode == 13)) {
+	        doneInput(i);
+	        return false;
+	    } else {
+	        return true;
+	    }
+	})
+	.prev().click(function () {
+    $(this).hide();
+    $(this).next().show().focus();
+});

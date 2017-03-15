@@ -84,9 +84,11 @@ function addMarker(coordinates) {
     google.maps.event.addListener(newRobotMarker, 'dragend',function(){ 
       gMap.setZoom(17);
       gMap.panTo(newRobotMarker.getPosition());
-      injectMarkerCoordinates('#coordinates-field',newRobotMarker.getPosition());
+      injectMarkerCoordinates('#new-robot-latitude',newRobotMarker.getPosition().lat());
+      injectMarkerCoordinates('#new-robot-longitude',newRobotMarker.getPosition().lng());
     })
-    injectMarkerCoordinates('#coordinates-field',newRobotMarker.getPosition());
+    injectMarkerCoordinates('#new-robot-latitude',newRobotMarker.getPosition().lat());
+    injectMarkerCoordinates('#new-robot-longitude',newRobotMarker.getPosition().lng());
   }
 }
 
@@ -307,13 +309,8 @@ function drawSnappedPolyline() {
 }
 
 function injectPathEndpointsCoordinates() {
-  coordinatesA = '(' + snappedCoordinates[0].lat() + ', ' + snappedCoordinates[0].lng() + ')';
-  coordinatesB = '(' + snappedCoordinates[snappedCoordinates.length-1].lat() +
-                 ', ' + snappedCoordinates[snappedCoordinates.length-1].lng() + ')';
-
-  injectMarkerCoordinates('#boundary-point-A',coordinatesA);
-  injectMarkerCoordinates('#boundary-point-B',coordinatesB);
-
-  // console.log(snappedCoordinates[snappedCoordinates.length-1]);
-  //injectMarkerCoordinates
+  injectMarkerCoordinates('#marker-latitude-A',snappedCoordinates[0].lat());
+  injectMarkerCoordinates('#marker-longitude-A',snappedCoordinates[0].lng());
+  injectMarkerCoordinates('#marker-latitude-B',snappedCoordinates[snappedCoordinates.length-1].lat());
+  injectMarkerCoordinates('#marker-longitude-B',snappedCoordinates[snappedCoordinates.length-1].lng());
 }

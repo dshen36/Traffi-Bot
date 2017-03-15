@@ -81,37 +81,85 @@
             </div>
             <div class="col-sm-4">
               <div class="panel-content panel panel-default panel-aesthetics">
-                <div class="panel-heading">
-                  <h3 id=></h3>
+                <div class="panel-heading editable-div" >
+                  <h3>Edit Robot Name <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></h3>
+                  <input class="clickedit" type="text" >
+                  <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
-                  <div class="row panel-row">
-                    <div class="col-sm-4">
-                      <label for="new-robot-name">Name</label>
-                    </div>
-                    <div class="col-sm-8">
-                      <input type="text" name="new-robot-name" class="form-control" id="new-robot-name" placeholder="Location Identifier" >
-                    </div>
-                  </div>
-                  <div class="row panel-row">
-                    <div class="col-sm-4">
-                      <button class="btn btn-primary" id="add-robot-marker" type="button">Add a Robot!</button>
-                    </div>
-                    <div class="col-sm-8">
-                      <input type="text" name="location" class="form-control" id="coordinates-field" placeholder="Coordinates" disabled>
+                  <div class="container-fluid">
+                    <div class="row panel-row">
+                      <div class="col-sm-4">
+                        <hr>
+                      </div>
+                      <div class="col-sm-4">
+                        <button class="btn btn-primary" id="add-robot-marker" type="button">New Robot</button>
+                      </div>
+                      <div class="col-sm-4">
+                        <hr>
+                      </div>
                     </div>
                   </div>
                   <div class="row panel-row">
                     <div class="col-sm-4">
-                      <button class="btn btn-primary" id="add-robot-boundaries" type="button">Monitor Path</button>
+                      <label for="new-robot-latitude">Latitude</label>
                     </div>
                     <div class="col-sm-8">
-                      <input type="text" name="boundary-point-A" class="form-control" id="boundary-point-A" placeholder="Boundary Coordinates A" disabled>
+                      <input type="text" name="r-latitude" class="form-control" id="new-robot-latitude" placeholder="latitude" disabled>
                     </div>
                   </div>
                   <div class="row panel-row">
-                    <div class="col-sm-8 col-sm-offset-4">
-                      <input type="text" name="boundary-point-B" class="form-control" id="boundary-point-B" placeholder="Boundary Coordinates B" disabled>
+                    <div class="col-sm-4">
+                      <label for="new-robot-longitude">Longitude</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" name="r-longitude" class="form-control" id="new-robot-longitude" placeholder="longitude" disabled>
+                    </div>
+                  </div>
+
+                  <div class="container-fluid">
+                    <div class="row panel-row">
+                      <div class="col-sm-4">
+                        <hr>
+                      </div>
+                      <div class="col-sm-4">
+                        <button class="btn btn-primary" id="add-robot-boundaries" type="button">Add Path</button>
+                      </div>
+                      <div class="col-sm-4">
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row panel-row">
+                    <div class="col-sm-4">
+                      <label for="marker-latitude-A">Latitude A</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" name="marker-latitude-A" class="form-control" id="marker-latitude-A" placeholder="Boundary Coordinates A" disabled>
+                    </div>
+                  </div>
+                  <div class="row panel-row">
+                    <div class="col-sm-4">
+                      <label for="marker-longitude-A">Longitude A</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" name="marker-longitude-A" class="form-control" id="marker-longitude-A" placeholder="Boundary Coordinates B" disabled>
+                    </div>
+                  </div>
+                  <div class="row panel-row">
+                    <div class="col-sm-4">
+                      <label for="marker-latitude-B">Latitude B</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" name="marker-latitude-B" class="form-control" id="marker-latitude-B" placeholder="Boundary Coordinates B" disabled>
+                    </div>
+                  </div>
+                  <div class="row panel-row">
+                    <div class="col-sm-4">
+                      <label for="marker-longitude-B">Longitude B</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" name="marker-longitude-B" class="form-control" id="marker-longitude-B" placeholder="Boundary Coordinates B" disabled>
                     </div>
                   </div>
                 </div>
