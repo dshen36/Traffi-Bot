@@ -88,17 +88,19 @@ body {
 /*
  * Panel design
  */
-
 .panel-row {
   margin-bottom: 15px;
   text-align: center;
 }
+
 .panel-row h4 {
   margin-bottom: 0;
 }
+
 .panel-content {
   margin-bottom: 20px;
 }
+
 .panel-content img {
   display: inline-block;
   border-radius: 50%;
@@ -106,10 +108,15 @@ body {
 
 .panel-aesthetics {
   padding: 0 !important;
-  height: 550px;
+  min-height: 550px;
 }
+
 #panel-info {
   padding-top: 15px;
+}
+
+.last-div-padding {
+  margin-bottom: 30px;
 }
 
 /*

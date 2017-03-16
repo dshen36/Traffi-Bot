@@ -45,8 +45,6 @@ $('.clickedit').hide()
 });
 
 
-
-
 // Unique ID coutner add-on
 var alert_counter = 0;
 
