@@ -155,6 +155,13 @@ label {
 /*
  * Editable Text Div
  */
+.masking-label {
+  background: none;
+}
+.masking-label:hover {
+  background: #ccc;
+}
+
 .editable-div {
   text-align: center;
   width: 100%;
@@ -164,4 +171,12 @@ label {
   margin: 10px;
   font-size: 16px;
   height: 36px;
+}
+
+/*
+ * Alerts
+ */
+.alert {
+  z-index: 100;
+  width: 100%;
 }
