@@ -108,7 +108,12 @@ body {
 
 .panel-aesthetics {
   padding: 0 !important;
-  min-height: 550px;
+  height: 550px;
+}
+
+.panel-overload {
+  padding: 0 !important;
+  min-height: 551px !important;
 }
 
 #panel-info {
