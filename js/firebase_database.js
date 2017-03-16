@@ -39,12 +39,6 @@ var vehicular_traffic_card = document.getElementById('vehicular-traffic');
 var pedestrian_traffic_card = document.getElementById('pedestrian-traffic');
 var traffic_pattern_card = document.getElementById('traffic-pattern');
 
-//synchronizing object changes in real time. via on method
-// dbRefObject.on('value', snap => console.log(snap.val()));
-//on points at the location of the inputted parameter
-//pulls down information on every change referring to the inputted parameter
-    //snap parameter = data snapshot. an entire tuple of values so only need .val()
-
 function getDataFromDB(location) {
     var robotRefObject = robotRefDB.child(location);
     robotRefObject.on('value', function(snapshot) {
@@ -55,6 +49,7 @@ function getDataFromDB(location) {
 
     var trafficBoundaries = trafficBoundaryRefDB.child(location);
     trafficBoundaries.on('value', function(snapshot) {
+        console.log(snapshot.val());
         var p1 = packCoordinates(snapshot.val()['point1']['latitude'],snapshot.val()['point1']['longitude']);
         var p2 = packCoordinates(snapshot.val()['point2']['latitude'],snapshot.val()['point2']['longitude']);
         estimateTraffic(p1,p2);
@@ -62,10 +57,38 @@ function getDataFromDB(location) {
 }
 
 function writeRobotData(name, location, latitude, longitude) {
-    database.ref('robots/' + name).set({
+    if (!name) {
+        bootstrap_alert.warning("Save Failed: Please provide a valid name!","danger",2500);
+        return;
+    }
+
+    database_name = databaseFormat(name);
+    database.ref('robots/' + database_name).set({
         location: location,
         latitude: latitude,
         longitude: longitude,
         battery_level: Math.floor(Math.random()*100 +1)
     });
+}
+
+function writeBoundaryData(name, latitudeA, longitudeA, latitudeB, longitudeB) {
+    if (!name) {
+        bootstrap_alert.warning("Save Failed: Please provide a valid name!","danger",2500);
+        return;
+    }
+    var pointA = {}, pointB = {};
+    database_name = databaseFormat(name);
+
+    pointA["latitude"] = latitudeA;
+    pointA["longitude"] = longitudeA;
+
+    pointB["latitude"] = latitudeB;
+    pointB["longitude"] = longitudeB;
+
+    database.ref('traffic_boundaries/' + database_name).set({
+        point1: pointA,
+        point2: pointB,
+    }).then(function() {
+        bootstrap_alert.warning("Successfully added new robot!","success",2500);
+    })
 }

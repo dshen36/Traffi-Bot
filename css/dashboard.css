@@ -113,7 +113,7 @@ body {
 
 .panel-overload {
   padding: 0 !important;
-  min-height: 551px !important;
+  min-height: 550px;
 }
 
 #panel-info {

@@ -45,10 +45,10 @@ $('.clickedit').hide()
 });
 
 
-// Unique ID coutner add-on
+// Unique alert ID counter
 var alert_counter = 0;
 
-// general method to create alerts
+// general alert method
 bootstrap_alert = function () {}
 bootstrap_alert.warning = function (message, alert, timeout) {
 	var alert_id = "floating_alert_" + alert_counter++;
@@ -60,7 +60,7 @@ bootstrap_alert.warning = function (message, alert, timeout) {
     }, timeout);
 }
 
-// Alert for marker add on
+// Alert for marker placement
 $(document).ready(function () {
     $('#add-robot-marker').click(function () {
     	bootstrap_alert.warning('Please move the red marker to the desired traffic point of interest!', 'info', 4000);
@@ -75,3 +75,28 @@ $(document).ready(function () {
     		and draw throught the intersection. Double click to stop drawing', 'info', 5000);
     })
 });
+
+$(document).ready(function () {
+	$('#confirm-submission').click(function () {
+		name = document.getElementById("new-robot-name").value;
+
+		robotLat = parseFloat(document.getElementById("new-robot-latitude").value);
+		robotLng = parseFloat(document.getElementById("new-robot-longitude").value);
+
+		latA = parseFloat(document.getElementById("marker-latitude-A").value);
+		lngA = parseFloat(document.getElementById("marker-longitude-A").value);
+
+		latB = parseFloat(document.getElementById("marker-latitude-B").value);
+		lngB = parseFloat(document.getElementById("marker-longitude-B").value);
+
+		writeRobotData(name,name,robotLat,robotLng);
+		writeBoundaryData(name, latA, lngA, latB, lngB);
+		//TODO(Dan): HOOK UP writeRobotData() as well
+	})
+});
+
+function databaseFormat(name) {
+	split_name = name.split(" ");
+    name = split_name.join("_");
+    return name.toUpperCase();
+}
