@@ -52,7 +52,7 @@ var alert_counter = 0;
 bootstrap_alert = function () {}
 bootstrap_alert.warning = function (message, alert, timeout) {
 	var alert_id = "floating_alert_" + alert_counter++;
-    $('<div id=' + alert_id + ' class="alert alert-' + alert + ' alert-dismissable fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + message + '</div>').appendTo('#content');
+    $('<div id=' + alert_id + ' class="alert alert-' + alert + ' alert-dismissable fade in" style="position: absolute; top: 10%; left: 3%; width: 94%"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + message + '</div>').appendTo('#content');
 
     // closes the alert automatically after a timeout
     setTimeout(function () {
