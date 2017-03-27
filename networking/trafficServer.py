@@ -1,14 +1,15 @@
 import socket, sys, string, time
 
 #connecting to attach to the socket directly to the remote address
-server = (IP_addr,port)
 def main():
     IP_addr = sys.argv[1]
     port = int(sys.argv[2])
+    server = trafficServer(IP_addr,port)
+    server.start()
     # content = sys.argv[3]
 
 class trafficLights(object):
-    def __init__(self, address, port):
+    def __init__(self):
         self.vehicle_stop = False
         self.vehicle_decelerate = False
         self.vehicle_go = False
@@ -65,12 +66,12 @@ class trafficServer(object):
         self.signal_boot_up()
         self.signal_turn_on()
         while True: 
-            self.pedestrian_priority_algorithm()
+            self.pedestrian_priority_algorithm(3,7)
             # data = sock.recv(1024)
 
     # Blinks orange light 3 times before stopping
     def signal_boot_up(self):
-        for i in range(0,6)
+        for i in range(0,6):
             self.socket.sendall(self.lights.send_v_decelerate())
             time.sleep(1)
 
@@ -107,22 +108,6 @@ class trafficServer(object):
         self.transition_to_pedestrian()
         time.sleep(p_time)
 
-# #attempting to send data
-# try:
-#     sock.connect(server)
-#     sock.sendall(content)
-#     data = sock.recv(1024) #would this be big enough? WCS = 1000(max size) + 5(3 decimal,.,0/1) + 4(100) + 2 (seperating spaces)
-#     print("Response from server:")
-#     print(data)
-
-# # if the server is not on, then it will throw an error
-# except socket.error as e:
-#     print("Unable to connect to the server. Please check that it is on before connecting.")
-#     sys.exit(0)
-
-# finally:
-#     print("closing socket")
-#     sock.close()
 
 if __name__ == '__main__':
     main()
