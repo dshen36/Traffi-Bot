@@ -8,11 +8,11 @@ function calculateHealthStatus(batteryLevel) {
 
 function calculatePinColor(batteryLevel) {
 	if (batteryLevel >= 50) {
-		return "239B56";
+		return "green";
 	} else if (batteryLevel >= 20) {
-		return "F4D03F";
+		return "yellow";
 	} else {
-		return "CB4335";
+		return "red";
 	}
 }
 

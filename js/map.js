@@ -45,12 +45,9 @@ function initMap() {
   getAllMarkers(gMap);
 }
 
-function drawMarkers(google_map, location, coordinates, battery_level) {
+function drawMarkers(google_map, location, coordinates, batteryLevel) {
   // Custom pin depending on color of battery level
-  var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + calculatePinColor(battery_level),
-    new google.maps.Size(21, 34),
-    new google.maps.Point(0,0),
-    new google.maps.Point(10, 34));
+  var pinImage = 'http://maps.google.com/mapfiles/ms/icons/' + calculatePinColor(batteryLevel) + '-dot.png'
 
   var marker = new google.maps.Marker({
     animation: google.maps.Animation.DROP,
@@ -62,6 +59,7 @@ function drawMarkers(google_map, location, coordinates, battery_level) {
 
   google.maps.event.addListener(marker, 'click', function(){
    getDataFromDB(location);
+   createStaticImage("panel-img",coordinates.lat,coordinates.lng,batteryLevel);
   });
 }
 
@@ -313,4 +311,11 @@ function injectPathEndpointsCoordinates() {
   injectMarkerCoordinates('#marker-longitude-A',snappedCoordinates[0].lng());
   injectMarkerCoordinates('#marker-latitude-B',snappedCoordinates[snappedCoordinates.length-1].lat());
   injectMarkerCoordinates('#marker-longitude-B',snappedCoordinates[snappedCoordinates.length-1].lng());
+}
+
+// Generate static image
+function createStaticImage(panelProfile,lat,long,batteryLevel) {
+  color =  calculatePinColor(batteryLevel);
+  retreived_pic = "http://maps.google.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=" + defaultZoom + "&markers=size:mid|color:" + color + "|" + lat + "," + long + "&size=200x200&maptype=roadmap&mobile=true&sensor=false";
+  document.getElementById(panelProfile).src = retreived_pic;
 }
