@@ -60,26 +60,53 @@ class trafficServer(object):
         self.port = port
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.lights = trafficLights()
+        self.is_active = False
 
     def start(self):
         self.socket.connect((self.address, self.port))
-        self.signal_boot_up()
+        self.is_active = True
+        # self.signal_boot_up()
         self.signal_turn_on()
-        while True: 
-            self.pedestrian_priority_algorithm(3,7)
+        counter = 0
+        while self.is_active: 
+            self.pedestrian_priority_algorithm(5,4)
             # data = sock.recv(1024)
+            # counter = counter + 1
+            # if counter == 2: 
+            #     self.is_active = False
+        # self.signal_turn_off()
+        # self.signal_shut_down()
 
-    # Blinks orange light 3 times before stopping
-    def signal_boot_up(self):
-        for i in range(0,6):
+
+    def signal_state_change(self,iterations):
+        for i in range(0,iterations):
             self.socket.sendall(self.lights.send_v_decelerate())
             time.sleep(1)
 
+    # Blinks orange light 3 times before stopping
+    def signal_boot_up(self):
+        self.signal_state_change(6)
+
+    def signal_shut_down(self):
+        self.signal_state_change(6)
+    
     # Starting the traffic light signalling now. start with vehicle_light = red, and pedestrian_light = green
     def signal_turn_on(self):
         self.socket.sendall(self.lights.send_v_stop())
         self.socket.sendall(self.lights.send_p_go())
+        time.sleep(5)
 
+    def signal_turn_off(self):
+        if (self.lights.is_v_stop()):
+            self.socket.sendall(self.lights.send_v_stop())
+        if (self.lights.is_v_decelerate()):
+            self.socket.sendall(self.lights.send_v_decelerate())
+        if (self.lights.is_v_go()):
+            self.socket.sendall(self.lights.send_v_go())
+        if (self.lights.is_p_stop()):
+            self.socket.sendall(self.lights.send_p_stop())
+        if (self.lights.is_p_go()):
+            self.socket.sendall(self.lights.send_p_go())
     # Assumes Pedestrian light is red, and vehicle light is green 
     def transition_to_pedestrian(self):
         self.socket.sendall(self.lights.send_v_go()) #turn off green
