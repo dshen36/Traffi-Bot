@@ -6,6 +6,7 @@ function calculateHealthStatus(batteryLevel) {
 	return "Unhealthy";
 }
 
+// Aesthetic indicator method for markers
 function calculatePinColor(batteryLevel) {
 	if (batteryLevel >= 50) {
 		return "green";
@@ -76,6 +77,7 @@ $(document).ready(function () {
     })
 });
 
+// Submission of form for a new marker
 $(document).ready(function () {
 	$('#confirm-submission').click(function () {
 		name = document.getElementById("new-robot-name").value;
@@ -91,12 +93,47 @@ $(document).ready(function () {
 
 		writeRobotData(name,name,robotLat,robotLng);
 		writeBoundaryData(name, latA, lngA, latB, lngB);
-		//TODO(Dan): HOOK UP writeRobotData() as well
+		
 	})
 });
 
+// Formatting the data for database injection
 function databaseFormat(name) {
 	split_name = name.split(" ");
     name = split_name.join("_");
     return name.toUpperCase();
 }
+
+// TODO: make this modal injection customizeable
+var customModal = $('<div class="custom-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">\
+						<div class="modal-dialog" role="document">\
+							<div class="modal-content">\
+								<div class="modal-header">\
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\
+									<h4 class="modal-title" id="myModalLabel">Successful Submission!</h4>\
+								</div>\
+								<div class="modal-body">Would you like to redirect to the home page or add another robot?</div>\
+								<div class="modal-footer">\
+									<button class="btn" onClick="document.location.href = \'index.html\';">Dashboard</button>\
+									<button class="btn" onClick="window.location.reload()">Add Robot</button>\
+								</div>\
+							</div>\
+						</div>\
+					</div>');
+
+async function raiseModal() {
+	await delay(1000);
+	$('body').append(customModal);
+    $('.custom-modal .hide').show();
+    $('.custom-modal').modal();
+  
+  	$('.custom-modal').on('hidden', function(){
+    	$('.custom-modal').remove();
+	});
+}
+
+// Used to delay actions, such as popup of modals or dropdown of alerts
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+

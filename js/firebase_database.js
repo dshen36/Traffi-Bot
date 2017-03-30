@@ -90,5 +90,6 @@ function writeBoundaryData(name, latitudeA, longitudeA, latitudeB, longitudeB) {
         point2: pointB,
     }).then(function() {
         bootstrap_alert.warning("Successfully added new robot!","success",2500);
+        raiseModal();
     })
 }
