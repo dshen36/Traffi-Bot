@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Traffi-Bot</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
+    
+    <title>Traffi-Bot</title>
+  </head>
+
+  <body>
+
+
+    <div class="video-background">
+      <div class="video-foreground">
+        <div id="YT-video" class="blurred grayscale"></div>
+      </div>
+    </div>
+    <svg id="svg-image-blur">
+        <filter id="blur-effect">
+            <feGaussianBlur stdDeviation="6" />
+        </filter>
+    </svg>
+
+    <div id="vidtop-content">
+      <div class="container-fluid">
+        <div class="row pad">
+          <div class="col-md-12">
+            <img src="images/Logo-Name.png" width="800" class="img-responsive logo" alt="Generic panel-content thumbnail">
+<!--             <img src="images/traffibot.png" width="200" class="img-responsive center" alt="Generic panel-content thumbnail"> -->
+          </div>
+        </div>
+
+        <!-- Short blurb about our project and why we did it -->
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-2">
+            <hr>
+          </div>
+          <div class="col-sm-2">
+            <h1>Our Story</h1>
+          </div>
+          <div class="col-sm-3">
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 pad">
+            <h3> Traffic has always been a prevalent problem at Georgia Tech. Local commuters would tell you that the time to leave campus ALONE would take about 15 minutes. This is specifically due to a combination of classes all ending at the same time, the myriad of professors and students leaving the campus, and most importantly, pedestrians.</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <hr>
+          </div>
+        </div>
+        <div class="row pad">
+          <div class="col-sm-2 col-sm-offset-3">
+            <div class="landing-button">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Learn More </button>
+            </div>
+          </div>
+          <div class="col-sm-2 col-sm-offset-2">
+            <div class="landing-button">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  onClick="window.location ='index.html'">Dashboard</button>             
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="vid-info">
+        <h1>The Problem</h1>
+        <p>Traffic has always been a prevalent problem at Georgia Tech. Local commuters would tell you that the time to leave campus ALONE would take about 15 minutes. This is specifically due to a combination of classes all ending at the same time, the myriad of professors and students leaving the campus, and most importantly, pedestrians.
+        
+       <a href="/500/Use-YouTube-Videos-as-Fullscreen-Web-Page-Backgrounds">Full article</a>
+      </div> -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/landing.js"></script>
+  </body>
+</html>

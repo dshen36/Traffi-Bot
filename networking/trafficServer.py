@@ -65,17 +65,16 @@ class trafficServer(object):
     def start(self):
         self.socket.connect((self.address, self.port))
         self.is_active = True
-        # self.signal_boot_up()
+        self.signal_boot_up()
         self.signal_turn_on()
         counter = 0
         while self.is_active: 
             self.pedestrian_priority_algorithm(5,4)
-            # data = sock.recv(1024)
-            # counter = counter + 1
-            # if counter == 2: 
-            #     self.is_active = False
-        # self.signal_turn_off()
-        # self.signal_shut_down()
+            counter = counter + 1
+            if counter == 2: 
+                self.is_active = False
+        self.signal_turn_off()
+        self.signal_shut_down()
 
 
     def signal_state_change(self,iterations):

@@ -13,7 +13,7 @@ spam_score = 0.0
 spam_words = ""
 port2 = "com4"
 ser = serial.Serial(port2, 9600)
-
+command = ""
 
 #TCP socket
 sock =  socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
@@ -23,14 +23,22 @@ server = ('',port) #replace with actual port later
 sock.bind(server)
 print("binded socket")
 
+
 # listen for incoming connection, and puts into server mode
 sock.listen(1)
 while True:
+    # if not command:
+    #     command = raw_input()
+    #     connection.sendall(command.strip())
+
     # waits for an incoming connection
     connection, client_address = sock.accept()
     print("waiting...")
 
     try:
+        if not command:
+            command = raw_input()
+            # connection.sendall(command.strip())
         print("found connection")
         while True:
             data = connection.recv(1024)
