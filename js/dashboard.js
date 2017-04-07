@@ -114,7 +114,7 @@ var customModal = $('<div class="custom-modal modal fade" tabindex="-1" role="di
 								</div>\
 								<div class="modal-body">Would you like to redirect to the home page or add another robot?</div>\
 								<div class="modal-footer">\
-									<button class="btn" onClick="document.location.href = \'index.html\';">Dashboard</button>\
+									<button class="btn" onClick="document.location.href = \'dashboard.html\';">Dashboard</button>\
 									<button class="btn" onClick="window.location.reload()">Add Robot</button>\
 								</div>\
 							</div>\

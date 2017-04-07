@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Traffi-Bot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!--     <script src="js/ie-emulation-modes-warning.js"></script>
+ -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Traffi-Bot</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="dashboard.html"">Dashboard</a></li>
+            <li><a href="add_robot.html"">New Robot</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="dashboard.html">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="add_robot.html">Add a New Robot</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+        </div>
+        <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row panel-row">
+            <div class="col-sm-8">
+              <div class="panel panel-default panel-aesthetics">
+                <div class="panel-heading">
+                  <h3>Georgia Tech</h3>
+                </div>
+                <div class="panel-body" id="map"></div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="panel-content panel panel-default panel-aesthetics">
+                <div class="panel-heading">
+                  <h3 id="location">Robot Location</h3>
+                </div>
+                <div class="panel-body">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" id="panel-img" alt="Generic panel-content thumbnail">
+                  
+                  <div class="table-responsive" id="panel-info">
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td class="vertical-header">Status</td>
+                          <td id="health-status">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Battery Level</td>
+                          <td id="battery-level">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Vehicular Traffic</td>
+                          <td id="vehicular-traffic">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Pedestrian Traffic</td>
+                          <td id="pedestrian-traffic">-</td>
+                        </tr>
+                        <tr>
+                          <td class="vertical-header">Traffic Pattern</td>
+                          <td id="traffic-pattern"> Pedestrian Priority</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Disable <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu alert-danger">
+                      <li ><a href="#">Confirm Disable</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row panel-row">
+            <div class="col-xs-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>General Statistics</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Weather</th>
+                          <th>Number Deployed</th>
+                          <th>Selected Algorithm</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>65</td>
+                          <td id="count"></td>
+                          <td>Pedestrian-Priority</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="sub-header"> Status at a Glance </h3>
+          <div class="row panel-row">
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
+              <h4>Robot 1</h4>
+              <span class="text-muted">Healthy</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
+              <h4>Robot 2</h4>
+              <span class="text-muted">Unhealthy</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
+              <h4>Robot 3</h4>
+              <span class="text-muted">Healthy</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 panel-content">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic panel-content thumbnail">
+              <h4>Robot 4</h4>
+              <span class="text-muted">Healthy</span>
+            </div>
+            <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+            <script src="js/firebase_database.js"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDOqVS7BV2Pz4FLhJKhwzOY8qOb-I2gpQ&callback=initMap"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/dashboard.js"></script>
+    <!-- Just to make our panel-content images work. Don't actually copy the next line! -->
+    <script src="js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
