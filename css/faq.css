@@ -1,0 +1,18 @@
+.panel-heading a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: grey;
+}
+.panel-heading a.collapsed:after {
+    content:"\e080";
+}
+
+.btn-primary {
+  background-color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.btn-primary:hover {
+  background-color: rgba(255,255,255,0.3);
+}
