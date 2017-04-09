@@ -69,10 +69,17 @@
   padding-top: 4%;
 }
 
+#our-purpose-context {
+  background-color: rgba(0,0,0,0.6);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+
 h1 {
   text-align: center;
   line-height:0px;
-  font-size: 2.5em;
+  font-size: 35px;
 }
 
 .landing-button {
@@ -93,7 +100,7 @@ h1 {
 }
 
 .btn-primary {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.8);
   border-color: rgba(0,0,0,0.7);
   padding:10px 16px;
 }
