@@ -79,7 +79,7 @@
 h1 {
   text-align: center;
   line-height:0px;
-  font-size: 35px;
+  font-size: 32px;
 }
 
 .landing-button {
@@ -107,4 +107,10 @@ h1 {
 
 .btn-primary:hover {
   background-color: rgba(0,0,0,0.9);
+}
+
+p {
+  color: #fff; 
+  font-size: 20px;
+  font-family: Helvetica,Arial,sans-serif; 
 }
