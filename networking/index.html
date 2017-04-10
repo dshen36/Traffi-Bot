@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Traffi-Bot Extra Controls</title>
+    </head>
+    <body>
+        <button id="Start" type="button">Start</button>
+        <button id="Off" type="button">Turn Off</button>
+        <br />
+        <br />
+        <form id="Change">
+            PTime:
+            <input type="text" id="p" value=5 maxlength=2 size=1>
+            VTime:
+            <input type="text" id="v" value=4 maxlength=2 size=1>
+            &nbsp;
+            <button>Change Times</button>
+        </form>
+        <br />
+        <button id="Terminate" type="button">Terminate Server</button>
+    </body>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $(function() {
+            var socket = io();
+            $('#Start').click(function() {
+                socket.emit('start click');
+            });
+
+            $('#Off').click(function() {
+                socket.emit('off click');
+            });
+
+            $('#Change').submit(function() {
+                socket.emit('change times', Number($('#p').val()), Number($('#v').val()));
+            })
+
+            $('#Terminate').click(function() {
+                socket.emit('terminate server');
+            });
+        });
+    </script>
+</html>
