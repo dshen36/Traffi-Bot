@@ -11,6 +11,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/faq.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   </head>
 
@@ -40,6 +41,41 @@
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nYWFgKFonas" allowfullscreen></iframe>
         </div>
       </div>
+      <div class="col-md-12">
+        <hr>
+      </div>
+      <div class="row panel-row">
+        <div class="col-xs-6 col-sm-3 panel-content">
+          <div class="img-responsive picture Dan" onclick="DanBackground()"></div>
+          <h4>Dan Shen</h4>
+          <span class="text-muted">Coder</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 panel-content">
+          <div class="img-responsive picture John" onclick="JohnBackground()"></div>
+          <h4>John Lee</h4>
+          <span class="text-muted">Hardware Engineer</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 panel-content">
+          <div class="img-responsive picture JiSu" onclick="JiSuBackground()"></div>
+          <h4>JiSu Kim</h4>
+          <span class="text-muted">Designer</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 panel-content">
+          <div class="img-responsive picture Steven" onclick="StevenBackground()"></div>
+          <h4>Steven Cho</h4>
+          <span class="text-muted">Coder</span>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="well"  id="background-info">Click on a team member to learn more about them!</div>
+<!--         <input type="text" name="background-info" class="form-control" id="background-info" placeholder="Click on a member to learn more about them!" disabled>
+ -->      </div>
+
+      <div class="col-md-12">
+        <hr>
+      </div>
+
+     
       <div class="col-md-4">
         <div class="panel-group" id="accordion">
           <div class="panel panel-default" id="panel1">
@@ -47,12 +83,12 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseOne" 
                  href="#collapseOne">
-                  Question 1
+                  What's the Problem?
                 </a>
               </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">Filler text</div>
+              <div class="panel-body">Traffic is extremely congested around campus since we rely on one main route to get in, out, and around campus. By trying to increase the flow on Ferst Drive, we hope that we can reduce traffic.</div>
             </div>
           </div>
           <div class="panel panel-default" id="panel2">
@@ -60,25 +96,12 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseTwo" 
                  href="#collapseTwo" class="collapsed">
-                  Question 2
+                  How do we plan on solving this?
                 </a>
               </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
-            </div>
-          </div>
-          <div class="panel panel-default" id="panel3">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-target="#collapseThree"
-                 href="#collapseThree" class="collapsed">
-                  Question 3
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
+              <div class="panel-body">This is how we differentiate ourselves from other parties who tried to solve this problem. We don't focus on trying to reduce cars on the road or promote other modes of transportation because that is just avoiding the underlying issue, not solving it. We plan to tackle this problem by controlling pedestrian traffic and how often they cross roads.</div>
             </div>
           </div>
         </div>
@@ -90,13 +113,13 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseFour" 
-                 href="#collapseFour">
-                  Question 4
+                 href="#collapseFour" class="collapsed">
+                  What are some pre-existing solutions?
                 </a>
               </h4>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse in">
-              <div class="panel-body">Filler text</div>
+            <div id="collapseFour" class="panel-collapse collapse">
+              <div class="panel-body">There are multiple solutions to control traffic congestion. First, we can install actual traffic lights. This, however, is very costly and not desired because the school does not need more traffic lights most of the time. Second, we can have police officers or contruction workers physically monitor the traffic. This is currently the most frequently used solution because workers can directky see and make decisions that can aid the traffic flow real-time. However, the percentage for error will drastically increase as humans try to cover more area to control the traffic with more people. They are prone to mistakes and cannot work long hours. Finally, there are many companies offering "portable" traffic lights. These are expensive, often just for rental, and highly complicated to set-up/configure/monitor. They are also not very portable since the products are big, bulky, and require a lot of work for installation.</div>
             </div>
           </div>
           <div class="panel panel-default" id="panel2">
@@ -104,25 +127,13 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseFive" 
                  href="#collapseFive" class="collapsed">
-                  Question 5
+                  How much of this project is implemented right now?
                 </a>
               </h4>
             </div>
             <div id="collapseFive" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
-            </div>
-          </div>
-          <div class="panel panel-default" id="panel3">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-target="#collapseSix"
-                 href="#collapseSix" class="collapsed">
-                  Question 6
-                </a>
-              </h4>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
+              <div class="panel-body">Currently we are just out of the design phase and into the implementation phase. We have a testing "robot," web applcation, network program, and a server. We are currently working on the algorithm, device communication, and the actual robots.
+              </div>
             </div>
           </div>
         </div>
@@ -133,13 +144,13 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseSeven" 
-                 href="#collapseSeven">
-                  Question 7
+                 href="#collapseSeven" class="collapsed">
+                  How is Traffi-Bot different to other portable traffic lights?
                 </a>
               </h4>
             </div>
-            <div id="collapseSeven" class="panel-collapse collapse in">
-              <div class="panel-body">Filler text</div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+              <div class="panel-body">Traffi-Bot is different because all the traffic configuration will not require contant human assistance. It can determine the traffic flow real-time and choose the best algorithm to aid the flow. It is also communicative; meaning, it will "talk" with other traffi-bots to make fluid traffic algorithm as an entire system.</div>
             </div>
           </div>
           <div class="panel panel-default" id="panel2">
@@ -147,12 +158,12 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseEight" 
                  href="#collapseEight" class="collapsed">
-                  Question 8
+                  Who are our partners?
                 </a>
               </h4>
             </div>
             <div id="collapseEight" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
+              <div class="panel-body">We are working with GTPD to figure out what are the limitations and posibilities of our project. They have not only guided us towards the right direction, but have also influenced some of our design choices. We are also trying to work with the department of transportation to allow testing in real enviornment.</div>
             </div>
           </div>
           <div class="panel panel-default" id="panel3">
@@ -160,12 +171,12 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-target="#collapseNine"
                  href="#collapseNine" class="collapsed">
-                  Question 9
+                  Our contact?
                 </a>
               </h4>
             </div>
             <div id="collapseNine" class="panel-collapse collapse">
-              <div class="panel-body">Filler text</div>
+              <div class="panel-body">If interested, please contact us at jkim939@gatech.edu</div>
             </div>
           </div>
         </div>
@@ -185,6 +196,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/landing.js"></script>
+    <script src="js/faq.js"></script>
+
   </body>
 </html>

@@ -24,3 +24,29 @@
 #jumbotron-container {
 	margin-top: 65px; /*navbar is 50*/
 }
+
+.picture {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    margin: auto;
+}
+
+.Dan {
+	background-image: url('../images/Dan.jpg');
+}
+
+.John {
+	background-image: url('../images/John.jpg');
+}
+
+.Steven {
+	background-image: url('../images/Steven.jpg');
+}
+
+.JiSu {
+	background-image: url('../images/JiSu.jpg');
+}
