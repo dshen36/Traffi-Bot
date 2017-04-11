@@ -90,7 +90,7 @@ h1 {
 }
 
 .button-text {
-  color: #fff; 
+  color: #4b4b4b; 
   text-decoration: none;
   font-family: Helvetica,Arial,sans-serif; 
 }
@@ -100,13 +100,13 @@ h1 {
 }
 
 .btn-primary {
-  background-color: rgba(0,0,0,0.8);
-  border-color: rgba(0,0,0,0.7);
+  background-color: rgba(240,240,240,0.9) !important;
+  border-color: rgba(75,75,75,0.7) !important;
   padding:10px 16px;
 }
 
 .btn-primary:hover {
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,1.0);
 }
 
 p {
