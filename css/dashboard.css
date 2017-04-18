@@ -120,8 +120,16 @@ body {
   padding-top: 15px;
 }
 
+.panel-footer {
+  text-align: center;
+}
+
 .last-div-padding {
   margin-bottom: 30px;
+}
+
+.subtitle {
+  line-height: 0px;
 }
 
 /*
