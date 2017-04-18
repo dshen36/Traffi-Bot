@@ -6,8 +6,8 @@ $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		alert(IP_Address);
-		window.location.href = IP_Address + ':5000';
+		// alert(IP_Address);
+		window.location.href = 'http://' + IP_Address + ':5000';
 		// socket = io.connect(IP_Address + ':5000');
 		// connected = true;
 	});
