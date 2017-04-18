@@ -9,11 +9,7 @@ $(document).ready(function () {
 		socket = io('http://' + IP_Address + ':5000');
 		connected = true;
 	});
-
-	socket.onopen = function() {
-		alert('Socket has been opened');
-	}
-
+	
 	$('#start-button').click(function () {
 		Vehicle_Duration = document.getElementById("vehicle-duration").value;
 		Pedestrian_Duration = document.getElementById("pedestrian-duration").value;
