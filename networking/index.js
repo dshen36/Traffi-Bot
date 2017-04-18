@@ -12,7 +12,10 @@ http.listen(4261, function() {
 });
 
 io.on('connection', function(socket) {
+    console.log('Connection from: ' + socket.id);
+
     socket.on('start click', function() {
+        console.log('start');
         var py = new PythonShell('inputter.py', { args: ['on'] });
 
         py.on('message', function(msg) {
@@ -25,6 +28,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('off click', function() {
+        console.log('end');
         var py = new PythonShell('inputter.py', { args: ['off'] });
 
         py.on('message', function(msg) {
@@ -37,6 +41,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('change times', function(p, v) {
+        console.log('change');
         if (!p) p = 5;
         if (!v) v = 4;
 
@@ -52,6 +57,7 @@ io.on('connection', function(socket) {
     })
 
     socket.on('terminate server', function() {
+        console.log('terminate');
         var py = new PythonShell('inputter.py', { args: ['terminate'] });
 
         py.on('message', function(msg) {
