@@ -8,7 +8,7 @@ $(document).ready(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
 		try {
-			var socket = new WebSocket('ws://' + IP_Address + ':5000');
+			var socket = new WebSocket('wss://' + IP_Address + ':5000');
 		} catch (exception) {
 			alert(exception);
 		}
