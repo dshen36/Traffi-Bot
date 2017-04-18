@@ -7,10 +7,13 @@ $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		var socket = new WebSocket('ws://' + IP_Address + ':5000');
+		try {
+			var socket = new WebSocket('ws://' + IP_Address + ':5000');
+		} catch (exception) {
+			alert(exception);
+		}
 		// socket = io('http://' + IP_Address + ':5000');
 		connected = true;
-		alert(connected);
 	})
 
 	$('#start-button').click(function () {
