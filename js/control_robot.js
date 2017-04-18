@@ -1,11 +1,13 @@
 var connected = false;
+var IP_address;
+var socket = '';
 
 $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		alert("Hello");
-
+		socket = io('http://' + IP_Address + ':5000');
+		connected = true;
 	})
 
 	$('#start-button').click(function () {
