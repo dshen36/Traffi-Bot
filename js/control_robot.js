@@ -1,6 +1,6 @@
 var connected = false;
 var IP_address;
-var socket = '';
+var socket = new io.Socket();
 
 $(document).ready(function () {
 	$('#connect-robot').click(function () {
