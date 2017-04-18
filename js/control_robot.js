@@ -8,6 +8,7 @@ $(document).ready(function () {
 		// TODO: @STEVEN
 		// socket = io('http://' + IP_Address + ':5000');
 		connected = true;
+		alert(connected);
 	})
 
 	$('#start-button').click(function () {
