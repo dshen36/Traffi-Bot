@@ -2,7 +2,7 @@ $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-
+		alert(IP_Address);
 
 	})
 
