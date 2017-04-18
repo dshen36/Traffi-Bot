@@ -1,18 +1,12 @@
 var connected = false;
 var IP_address;
-// var socket = new io.Socket();
-var socket;
+var socket = new io.Socket();
 
 $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		try {
-			var socket = new WebSocket('wss://' + IP_Address + ':5000');
-		} catch (exception) {
-			alert(exception);
-		}
-		// socket = io('http://' + IP_Address + ':5000');
+		socket = io('http://' + IP_Address + ':5000');
 		connected = true;
 	});
 
