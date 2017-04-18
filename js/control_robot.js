@@ -6,10 +6,10 @@ $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		socket = io('http://' + IP_Address + ':5000');
+		socket.connect('http://' + IP_Address + ':5000');
 		connected = true;
 	});
-	
+
 	$('#start-button').click(function () {
 		Vehicle_Duration = document.getElementById("vehicle-duration").value;
 		Pedestrian_Duration = document.getElementById("pedestrian-duration").value;
