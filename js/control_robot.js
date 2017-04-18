@@ -14,7 +14,11 @@ $(document).ready(function () {
 		}
 		// socket = io('http://' + IP_Address + ':5000');
 		connected = true;
-	})
+	});
+
+	socket.onopen = function() {
+		alert('Socket has been opened');
+	}
 
 	$('#start-button').click(function () {
 		Vehicle_Duration = document.getElementById("vehicle-duration").value;
@@ -25,8 +29,7 @@ $(document).ready(function () {
 		} else {
 			alert('Not connected yet');
 		}
-
-	})
+	});
 
 	$('#stop-button').click(function () {
 		// TODO: @STEVEN
@@ -35,8 +38,7 @@ $(document).ready(function () {
 		} else {
 			alert('Not connected yet');
 		}
-		
-	})
+	});
 });
 
 
