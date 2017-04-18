@@ -6,7 +6,7 @@ $(document).ready(function () {
 	$('#connect-robot').click(function () {
 		IP_Address = document.getElementById("IP-Address").value;
 		// TODO: @STEVEN
-		socket = io('http://' + IP_Address + ':5000');
+		// socket = io('http://' + IP_Address + ':5000');
 		connected = true;
 	})
 
