@@ -7,8 +7,8 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-http.listen(4261, function() {
-    console.log('Listening on *:4261');
+http.listen(5000, function() {
+    console.log('Listening on *:5000');
 });
 
 io.on('connection', function(socket) {
